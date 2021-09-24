@@ -1,5 +1,5 @@
 import {useState} from "react";
-import AppRouter from "./Router";
+import AppRouter from "components/Router";
 
 function App() {
   // 상수 선언, ES6문번의 구조 분해 할당
