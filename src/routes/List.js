@@ -1,3 +1,5 @@
-const List = () => <span>List ...</span>
+const List = () => {
+  <span>List ...</span>;
+};
 
 export default List;
