@@ -6,12 +6,14 @@ function App() {
   // 상수 선언, ES6문번의 구조 분해 할당
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userObj, setUserObj] = useState(null);
   useEffect(() => {
     //console.log(authService.currentUser);
     //setIsLoggedIn(authService.currentUser);
     authService.onAuthStateChanged((user) => {
       if (user) {
         setIsLoggedIn(user);
+        setUserObj(user);
       } else {
         setIsLoggedIn(false);
       }
@@ -22,7 +24,7 @@ function App() {
   // 현재 접속자 확인
   return (
     <>
-      {init ? <AppRouter isLoggedIn={isLoggedIn}></AppRouter> : 'initializing ...'}
+      {init ? <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} /> : 'initializing ...'}
       <footer>&copy; {new Date().getFullYear()} Nwitter</footer>
     </>
   );

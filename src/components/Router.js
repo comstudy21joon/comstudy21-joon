@@ -5,7 +5,7 @@ import Profile from 'routes/Profile';
 import List from 'routes/List';
 import Navigation from './Navigation';
 
-const AppRouter = ({ isLoggedIn }) => {
+const AppRouter = ({ isLoggedIn, userObj }) => {
   // 함수의 내부 - 연산, 호출 ...
   return (
     <Router>
@@ -14,7 +14,7 @@ const AppRouter = ({ isLoggedIn }) => {
         {isLoggedIn ? (
           <>
             <Route exact path="/">
-              <Home />
+              <Home userObj={userObj} />
             </Route>
             <Route exact path="/profile">
               <Profile />
