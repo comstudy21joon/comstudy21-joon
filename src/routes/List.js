@@ -1,5 +1,5 @@
 const List = () => {
-  <span>List ...</span>;
+  return <span>List ...</span>;
 };
 
 export default List;
